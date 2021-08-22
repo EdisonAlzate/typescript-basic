@@ -1,16 +1,16 @@
 {
-  "name": "typescriptBootcamp",
+  "name": "rest-ypescript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
-    "build": "npx tsc",
+    "build": "rimraf npx tsc",
     "start": "node build/index.js",
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Edison",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.13",
