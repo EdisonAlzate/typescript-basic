@@ -7,12 +7,13 @@ export const getUsuarios = (req: Request, res: Response) => {
 }
 
 export const getUsuario = (req: Request, res: Response) => {
-
+    
     const {id}=req.params;
 
     res.json({
         msg: 'getUsuario',
         id
+        
     })
 }
 

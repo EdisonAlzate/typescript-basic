@@ -1,6 +1,6 @@
 import express from 'express';
 import userRoutes from '../routes/usuarios';
-
+import cors from 'cors'
 
 
 class Server {
@@ -16,27 +16,32 @@ class Server {
         this.port=process.env.PORT || '8081';
     
         //Middlewares
+        this.middlewares();
 
         //Rutas de mi aplicacion     
         this.routes();
     }
+
+    //TODO: Conectar base de datos
+    
     routes(){
         this.app.use(this.apiPaths.usuarios,userRoutes)
     }
 
 
-   /*  middlewares(){
-        this.app.use(express.static():express.application)
+    middlewares(){
+
+        //CORS
+        this.app.use(cors());
+
+        //Lectura del body
+        this.app.use(express.json())
+
+        //carpeta publica
+        this.app.use(express.static('public'))
     }
 
-    routes(){
-        this.app.get('/',(req,res)=>{
-            res.json({
-                ok:true,
-                msg:'hola get'
-        })
-    })
-   } */
+    
 
 
     listen() {
